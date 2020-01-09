@@ -12,7 +12,7 @@ public class PageList2 extends PageView{
     public PageList2(Context context) {
         super(context);
 
-        View layout = LayoutInflater.from(context).inflate(R.layout.activity_page_list1, null);
+        View layout = LayoutInflater.from(context).inflate(R.layout.activity_page_list2, null);
         addView(layout);
     }
 }

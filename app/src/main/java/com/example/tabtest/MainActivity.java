@@ -8,6 +8,8 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -29,11 +31,23 @@ public class MainActivity extends AppCompatActivity {
     public static PageList1 PageList1_layout;
     public static PageList2 PageList2_layout;
     public static PageList3 PageList3_layout;
+    SQLiteDatabase db;
+    static  final  String tb_name="test";
+    static final String db_name ="testDB";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        db  = openOrCreateDatabase(db_name, Context.MODE_PRIVATE,null);
+
+        String CreateTable = "CREATE TABLE IF NOT EXISTS "+
+                tb_name+
+                "(_ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
+                "name VARCHAR(32)," +
+                "price int(32),"+
+                "classname int(64) )";
+        db.execSQL(CreateTable);
 
         initSlideLayout();
 

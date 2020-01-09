@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TabTest</string>
+    <string name="price">price</string>
+    <string name="name">name</string>
 </resources>
